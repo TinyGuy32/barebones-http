@@ -4,7 +4,8 @@ import net
 import os
 
 fn main() {
-	mut sock := net.listen_tcp(.ip, 'localhost:8080')!
+	port := if os.args.len == 2 { os.args[1] } else { 'localhost:8080' }
+	mut sock := net.listen_tcp(.ip, port)!
 	println('listening for http on ${sock.addr()!}')
 	for {
 		mut cli := sock.accept()!

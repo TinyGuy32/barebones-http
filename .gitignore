@@ -25,3 +25,6 @@ bin/
 
 # emacs
 *.v~
+*.html~
+*.css~
+*.js~
